@@ -30,7 +30,7 @@ export class QuizSettings{
         const api = `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}&difficulty=${difficulty}`
         const quetsions = await this.fetchData(api)
         // console.log(quetsions);
-        if(quetsions.length>0){
+        if(quetsions.length>0&&Array.from(document.getElementById('numberOfQuestions').attributes)[1].value > this.numberOfQuestions.value){
             $('#alert1').hide(0);
             $('#quiz-app').slideUp(100);
             $('#quiz-page').slideDown(200);
